@@ -17,9 +17,6 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         initialize()
     }
-    @IBAction func unwindLocationCancel (segue: UIStoryboardSegue) {
-        
-    }
 }
 
 //MARK: Private Extension
