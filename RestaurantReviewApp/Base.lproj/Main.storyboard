@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="NB4-kh-9dh">
             <objects>
-                <viewController id="H9I-5j-yww" sceneMemberID="viewController">
+                <viewController id="H9I-5j-yww" customClass="MapViewController" customModule="RestaurantReviewApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a1e-NH-YX0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,10 +32,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3yk-Cl-d3Z"/>
+                    <connections>
+                        <outlet property="mapView" destination="gvJ-9e-pgE" id="3Iy-He-YFI"/>
+                        <segue destination="fFX-Yc-ZGE" kind="show" identifier="showDetail" id="6YI-9q-LmB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="par-2t-yAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1361" y="431"/>
+        </scene>
+        <!--RestaurantDetail-->
+        <scene sceneID="HAa-GJ-bwQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RestaurantDetail" id="fFX-Yc-ZGE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="U9a-QZ-7kQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6K-aL-ZRX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2138" y="432"/>
         </scene>
         <!--Explore View Controller-->
         <scene sceneID="coz-ih-gVi">
@@ -448,10 +462,10 @@
             </objects>
             <point key="canvasLocation" x="3700" y="-190"/>
         </scene>
-        <!--View Controller-->
+        <!--Location View Controller-->
         <scene sceneID="Qwq-0A-FR9">
             <objects>
-                <viewController id="TDU-Bq-EPp" sceneMemberID="viewController">
+                <viewController id="TDU-Bq-EPp" customClass="LocationViewController" customModule="RestaurantReviewApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iPQ-ZD-e9U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -478,6 +492,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TDU-Bq-EPp" id="4gr-gt-wQH"/>
+                                    <outlet property="delegate" destination="TDU-Bq-EPp" id="KAA-sX-mK8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="10T-LE-fOY"/>
@@ -497,6 +515,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="DVc-bZ-raK"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0h2-1c-6oT" id="zNe-8N-MDR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvz-6v-ak0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xJK-AZ-KJu" userLabel="Exit" sceneMemberID="exit"/>
